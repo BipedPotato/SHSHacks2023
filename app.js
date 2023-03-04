@@ -14,17 +14,21 @@ function setPosition(e) {
 
 
 function draw(e) {
-  if (e.buttons !== 1) return;
+  if(document.activeElement == canvas)
+  {
+    if (e.buttons !== 1) return;
 
-  ctx.beginPath();
+    ctx.beginPath();
+  
+    ctx.lineWidth = 5;
+    ctx.lineCap = 'round';
+    //ctx.strokeStyle = '#ffffff;
+  
+    ctx.moveTo(pos.x, pos.y);
+    setPosition(e);
+    ctx.lineTo(pos.x, pos.y);
+  
+    ctx.stroke(); 
+  }
 
-  ctx.lineWidth = 5;
-  ctx.lineCap = 'round';
-  //ctx.strokeStyle = '#ffffff;
-
-  ctx.moveTo(pos.x, pos.y);
-  setPosition(e);
-  ctx.lineTo(pos.x, pos.y);
-
-  ctx.stroke(); 
 }
