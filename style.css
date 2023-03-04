@@ -1,1 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+.thoughtdiv {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #000000;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
