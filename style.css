@@ -6,6 +6,7 @@
     align-items: center;
     text-align: center;
     padding: 10px;
+    background: none no-repeat scroll 0 0 #fff;
 }
 .drawingtext {
     text-align: center;
@@ -18,5 +19,8 @@
     margin-right: auto;
     display: block;
     width: 800px;
-    
+    background: none no-repeat scroll 0 0 #fff;
+}
+body {
+    background-color: #6BFF97;
 }
