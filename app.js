@@ -6,8 +6,10 @@ document.addEventListener('mousedown', setPosition);
 document.addEventListener('mouseenter', setPosition);
 
 function setPosition(e) {
-  pos.x = e.clientX- canvas.offsetLeft;
-  pos.y = e.clientY- canvas.offsetTop;
+  let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  pos.x = e.clientX- canvas.offsetLeft+scrollLeft;
+  pos.y = e.clientY- canvas.offsetTop+scrollTop;
 }
 
 
