@@ -17,10 +17,10 @@ function draw(e) {
   if (e.buttons !== 1) return;
 
   ctx.beginPath();
-
-  ctx.lineWidth = 5;
+  
+  ctx.lineWidth = document.getElementById("drawingSize").value;
   ctx.lineCap = 'round';
-  //ctx.strokeStyle = '#ffffff;
+  ctx.strokeStyle = document.getElementById("colorpicker").value;
 
   ctx.moveTo(pos.x, pos.y);
   setPosition(e);
