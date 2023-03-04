@@ -7,12 +7,18 @@ canvas.addEventListener('mouseenter', setPosition);
 
 canvas.addEventListener('touchmove', draw);
 canvas.addEventListener('touchstart', setPosition);
-canvas.addEventListener('touchstart', setPosition);
 function setPosition(e) {
   let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   pos.x = e.clientX- canvas.offsetLeft+scrollLeft;
   pos.y = e.clientY- canvas.offsetTop+scrollTop;
+}
+function mobileSetPosition(e)
+{
+  let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  pos.x = e.touches[0].clientX- canvas.offsetLeft+scrollLeft;
+  pos.y = e.touches[0].clientY- canvas.offsetTop+scrollTop;
 }
 
 
