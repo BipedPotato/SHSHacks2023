@@ -39,6 +39,7 @@
     border: 3px solid #000000;
     text-align: center;
     background: none no-repeat scroll 0 0 #fff;
+    line-height: 50px;
 }
 body {
     background-color: #6bff97;

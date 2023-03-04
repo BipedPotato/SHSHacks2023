@@ -5,6 +5,9 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', setPosition);
 canvas.addEventListener('mouseenter', setPosition);
 
+canvas.addEventListener('touchmove', draw);
+canvas.addEventListener('touchstart', setPosition);
+canvas.addEventListener('touchstart', setPosition);
 function setPosition(e) {
   let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
