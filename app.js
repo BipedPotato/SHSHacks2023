@@ -1,5 +1,4 @@
-var canvas = document.getElementById('canvas');
-canvas.style.position = 'fixed';
+var canvas = document.getElementById('drawingcanvas');
 var ctx = canvas.getContext('2d');
 var pos = { x: 0, y: 0 };
 document.addEventListener('mousemove', draw);
