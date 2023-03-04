@@ -2,24 +2,24 @@
 .thoughtdiv {
     margin: auto;
     width: 800px;
-    border: 3px solid #000000;
+    border: 10px solid #4EE093;
     align-items: center;
     text-align: center;
     padding: 10px;
-    background: none no-repeat scroll 0 0 #fff;
+    background: none no-repeat scroll 0 0 #6BFF97;
 }
 .drawingtext {
     text-align: center;
 }
 #drawingcanvas {
-    border: 3px solid #000000;
+    border: 5px solid #4EE093;
     padding-left: 0;
     padding-right: 0;
     margin-left: auto;
     margin-right: auto;
     display: block;
     width: 800px;
-    background: none no-repeat scroll 0 0 #fff;
+    background: none no-repeat scroll 0 0 #6BFF97;
 }
 .slider {
     -webkit-appearance: none;
