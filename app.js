@@ -5,9 +5,14 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', setPosition);
 canvas.addEventListener('mouseenter', setPosition);
 
-canvas.addEventListener('touchmove', draw);
-canvas.addEventListener('touchstart', setPosition);
-canvas.addEventListener('touchstart', setPosition);
+canvas.addEventListener("touchmove", function (e) {
+  var touch = e.touches[0];
+  var mouseEvent = new MouseEvent("mousemove", {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+  canvas.dispatchEvent(mouseEvent);
+}, false);
 function setPosition(e) {
   let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -17,6 +22,8 @@ function setPosition(e) {
 
 
 function draw(e) {
+  e.preventDefault();
+  e.stopPropagation();
   if (e.buttons !== 1) return;
 
   ctx.beginPath();
