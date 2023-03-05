@@ -22,7 +22,7 @@ function consoleInput( data ) {
         console.log( e.stack );
     }
 }
-console.log("asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd");
+console.log("plz send help");
 var canvas = document.getElementById('drawingcanvas');
 var ctx = canvas.getContext('2d');
 var pos = { x: 0, y: 0 };
