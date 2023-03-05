@@ -1,3 +1,28 @@
+var output = document.createElement('pre');
+document.body.appendChild(output);
+
+var oldLog = console.log;
+
+console.log = function( ...items ) {
+
+    oldLog.apply(this,items);
+
+    items.forEach( (item,i)=>{
+        items[i] = (typeof item === 'object' ? JSON.stringify(item,null,4) : item);
+    });
+    output.innerHTML += items.join(' ') + '<br />';
+
+};
+
+function consoleInput( data ) {
+    console.log( data + '<br />' );
+    try {
+        console.log( eval( data ) );
+    } catch (e) {
+        console.log( e.stack );
+    }
+}
+console.log("asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd");
 var canvas = document.getElementById('drawingcanvas');
 var ctx = canvas.getContext('2d');
 var pos = { x: 0, y: 0 };
@@ -7,7 +32,6 @@ canvas.addEventListener('mouseenter', setPosition);
 
 
 canvas.addEventListener("touchstart", function (e) {
-  document.getElementById("drawingSize").value = 100;
   mousePos = getTouchPos(canvas, e);
   var touch = e.touches[0];
   var mouseEvent = new MouseEvent("mousedown", {
