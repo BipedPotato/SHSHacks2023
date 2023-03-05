@@ -63,3 +63,8 @@ body {
 label {
     text-align: left;
 }
+.everythingcontainer
+{
+    display: flex;
+    justify-content: center;
+}

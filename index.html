@@ -17,20 +17,23 @@
     <input type="text" id="thoughtbox" name="thoughtbox" value="I'm feeling good today"><br>
     </div>
     <div class="drawingtext">Draw a therapeutical drawing</div>
-    <div class="drawingcontainer">
+    <div class="everythingcontainer">
+      <div class="drawingcontainer">
      
-      <label for="drawingSize">Size</label>
-      <input type="range" min="1" max="100" value="20" class="slider" id="drawingSize">
-      
-      <label for="colorpicker">Color</label>
-      <input type="color" id="colorpicker" value="#000000"><br>
-      
-      <label for="eraser">Eraser</label>
-      <input type="checkbox" id="eraser">
-
-      </input>
+        <label for="drawingSize">Size</label>
+        <input type="range" min="1" max="100" value="20" class="slider" id="drawingSize">
+        
+        <label for="colorpicker">Color</label>
+        <input type="color" id="colorpicker" value="#000000"><br>
+        
+        <label for="eraser">Eraser</label>
+        <input type="checkbox" id="eraser">
+  
+        </input>
+      </div>
+      <canvas id="drawingcanvas" width="800" height="400"></canvas>
     </div>
-    <canvas id="drawingcanvas" width="800" height="400"></canvas>
+    
     
     <script src="app.js"></script>
   </body>
