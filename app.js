@@ -5,7 +5,7 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', setPosition);
 canvas.addEventListener('mouseenter', setPosition);
 
-canvas.addEventListener('touchmove', draw);
+canvas.addEventListener('touchmove', drawMobile);
 canvas.addEventListener('touchdown', setPosition);
 canvas.addEventListener('touchstart', setPosition);
 
@@ -37,6 +37,24 @@ function draw(e) {
 
   ctx.moveTo(pos.x, pos.y);
   setPosition(e);
+  ctx.lineTo(pos.x, pos.y);
+
+  ctx.stroke();
+
+}
+function drawMobile(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  if (e.buttons !== 1) return;
+
+  ctx.beginPath();
+
+  ctx.lineWidth = document.getElementById("drawingSize").value;
+  ctx.lineCap = 'round';
+  ctx.strokeStyle = document.getElementById("colorpicker").value;
+
+  ctx.moveTo(pos.x, pos.y);
+  setPositionMobile(e);
   ctx.lineTo(pos.x, pos.y);
 
   ctx.stroke();
