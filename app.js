@@ -38,12 +38,12 @@ canvas.addEventListener("touchstart", function (e) {
   clientY: touch.clientY
   });
   canvas.dispatchEvent(mouseEvent);
-}, false);
+});
 
 canvas.addEventListener("touchend", function (e) {
   var mouseEvent = new MouseEvent("mouseup", {});
   canvas.dispatchEvent(mouseEvent);
-}, false);
+});
 
 canvas.addEventListener("touchmove", function (e) {
   var touch = e.touches[0];
@@ -52,7 +52,7 @@ canvas.addEventListener("touchmove", function (e) {
   clientY: touch.clientY
   });
   canvas.dispatchEvent(mouseEvent);
-}, false);
+});
 
 // Get the position of a touch relative to the canvas
 function getTouchPos(canvasDom, touchEvent) {
