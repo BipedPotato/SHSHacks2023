@@ -65,6 +65,9 @@ window.requestAnimFrame = (function (callback) {
 
 function renderCanvas() {
   if (drawing) {
+    ctx.lineWidth = document.getElementById("drawingSize").value;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = document.getElementById("colorpicker").value;
     
     ctx.moveTo(lastPos.x, lastPos.y);
     ctx.lineTo(mousePos.x, mousePos.y);
