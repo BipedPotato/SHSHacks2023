@@ -26,7 +26,7 @@ function consoleInput(data) {
 var canvas = document.getElementById('drawingcanvas');
 var ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth / 2;
-canvas.height = window.innerHeight / 3;
+canvas.height = window.innerHeight / 2;
 
 var drawing = false;
 var mousePos = { x: 0, y: 0 };
@@ -65,6 +65,8 @@ window.requestAnimFrame = (function (callback) {
 
 function renderCanvas() {
   if (drawing) {
+    ctx.beginPath();
+  
     ctx.lineWidth = document.getElementById("drawingSize").value;
     ctx.lineCap = 'round';
     ctx.strokeStyle = document.getElementById("colorpicker").value;
