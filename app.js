@@ -1,3 +1,7 @@
+var scale = 'scale(1)';
+document.body.style.webkitTransform =  scale;    // Chrome, Opera, Safari
+ document.body.style.msTransform =   scale;       // IE 9
+ document.body.style.transform = scale;     // General
 var output = document.createElement('pre');
 document.body.appendChild(output);
 
@@ -25,8 +29,8 @@ function consoleInput(data) {
 //console.log("plz send help");
 var canvas = document.getElementById('drawingcanvas');
 var ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth / 2;
-canvas.height = window.innerHeight / 2;
+canvas.width = document.documentElement.clientWidth/ 2;
+canvas.height = document.documentElement.clientHeight / 2;
 
 var drawing = false;
 var mousePos = { x: 0, y: 0 };
