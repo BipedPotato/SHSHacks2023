@@ -31,7 +31,21 @@ var canvas = document.getElementById('drawingcanvas');
 var ctx = canvas.getContext('2d');
 canvas.width = document.documentElement.clientWidth/ 2;
 canvas.height = document.documentElement.clientHeight / 2;
+if(localStorage.getItem("imageSave") === undefined)
+{
 
+}
+else
+{
+  //console.log(localStorage.getItem("imageSave") );
+  context = canvas.getContext("2d");
+  var imageObj = new Image();
+  imageObj.onload = function(){
+      context.drawImage(this, 0, 0);
+  };
+  
+  imageObj.src = localStorage.getItem("imageSave");
+}
 var drawing = false;
 var mousePos = { x: 0, y: 0 };
 var lastPos = mousePos;
@@ -149,3 +163,8 @@ function updateButton() {
   }
   click += 0.5;
 }
+document.getElementById("saveButton").addEventListener("click",function(e)
+{
+  localStorage.setItem("imageSave", canvas.toDataURL());
+
+});
