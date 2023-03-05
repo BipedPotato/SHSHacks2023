@@ -46,6 +46,7 @@ canvas.addEventListener("touchend", function (e) {
 });
 
 canvas.addEventListener("touchmove", function (e) {
+  console.log("TOUCHMOVE");
   var touch = e.touches[0];
   var mouseEvent = new MouseEvent("mousemove", {
   clientX: touch.clientX,
