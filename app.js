@@ -68,6 +68,7 @@ function getTouchPos(canvasDom, touchEvent) {
 
 
 function setPosition(e) {
+  console.log(pos.x+","+pos.y);
   let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   pos.x = e.clientX - canvas.offsetLeft + scrollLeft;
