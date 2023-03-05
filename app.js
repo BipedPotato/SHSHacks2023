@@ -31,7 +31,15 @@ var canvas = document.getElementById('drawingcanvas');
 var ctx = canvas.getContext('2d');
 canvas.width = document.documentElement.clientWidth/ 2;
 canvas.height = document.documentElement.clientHeight / 2;
+if(Cookies.get('imageSave') === undefined)
+{
 
+}
+else
+{
+  console.log("asdasdasda");
+  //Cookies.get('imageSave');
+}
 var drawing = false;
 var mousePos = { x: 0, y: 0 };
 var lastPos = mousePos;
@@ -134,3 +142,9 @@ document.body.addEventListener("touchmove", function (e) {
     e.preventDefault();
   }
 }, false);
+
+document.getElementById("saveButton").addEventListener("click",function(e)
+{
+  Cookies.set('imageSave',  canvas.toDataURL());
+
+});
