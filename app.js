@@ -146,5 +146,5 @@ document.body.addEventListener("touchmove", function (e) {
 document.getElementById("saveButton").addEventListener("click",function(e)
 {
   Cookies.set('imageSave',  canvas.toDataURL());
-
+  console.log("saving");
 });
