@@ -134,3 +134,18 @@ document.body.addEventListener("touchmove", function (e) {
     e.preventDefault();
   }
 }, false);
+
+const button = document.querySelector('input');
+const paragraph = document.querySelector('p');
+
+button.addEventListener('click', updateButton);
+var click = -0.5;
+function updateButton() {
+  if(click == 0){
+    paragraph.textContent = "Thanks for sharing!"
+  }
+  else{
+    paragraph.textContent = "Clicks: " + click
+  }
+  click += 0.5;
+}
