@@ -34,6 +34,7 @@
     transition: opacity .2s;
 }
 .drawingcontainer {
+    padding-bottom: 40px;
     margin-left: 10%;  
     width: 100%;
     height: 50%;
@@ -69,4 +70,22 @@ label {
     display: grid ;
     grid-template-columns: auto auto;
     justify-content: center;
+}
+.saveButton
+{
+    border-radius: 3%;
+    background-color: #6bff97;
+    color:#FFFFFF;
+    border:none;
+    width:50%;
+    height:50%;
+    font-size: large;
+}
+
+.saveButton:hover {background-color: #3e8e41}
+
+.saveButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
