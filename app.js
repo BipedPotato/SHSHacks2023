@@ -31,14 +31,20 @@ var canvas = document.getElementById('drawingcanvas');
 var ctx = canvas.getContext('2d');
 canvas.width = document.documentElement.clientWidth/ 2;
 canvas.height = document.documentElement.clientHeight / 2;
-if(Cookies.get('imageSave') === undefined)
+if(localStorage.getItem("imageSave") === undefined)
 {
 
 }
 else
 {
-  console.log("asdasdasda");
-  //Cookies.get('imageSave');
+  //console.log(localStorage.getItem("imageSave") );
+  context = canvas.getContext("2d");
+  var imageObj = new Image();
+  imageObj.onload = function(){
+      context.drawImage(this, 0, 0);
+  };
+  
+  imageObj.src = localStorage.getItem("imageSave");
 }
 var drawing = false;
 var mousePos = { x: 0, y: 0 };
@@ -145,6 +151,6 @@ document.body.addEventListener("touchmove", function (e) {
 
 document.getElementById("saveButton").addEventListener("click",function(e)
 {
-  Cookies.set('imageSave',  canvas.toDataURL());
-  console.log("saving");
+  localStorage.setItem("imageSave", canvas.toDataURL());
+
 });
