@@ -43,6 +43,7 @@
 }
 body {
     background-color: #6bff97;
+    overflow:hidden;
 }
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
