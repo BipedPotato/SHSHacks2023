@@ -13,11 +13,11 @@
     text-align: center;
 }
 #drawingcanvas {
+    float: left;
     border: 3px solid #000000;
     padding-left: 0;
     padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 20px;
     display: block;
     width: 800px;
     background: none no-repeat scroll 0 0 #ffffff;
@@ -33,12 +33,12 @@
     transition: opacity .2s;
 }
 .drawingcontainer {
-    margin: auto;
+    float: left;
+    margin-left: 30px;  
     padding: 70px 0;
     width: 400px;
     align-items: center;
     border: 3px solid #000000;
-    border-radius: 12px;
     text-align: center;
     background: none no-repeat scroll 0 0 #fff;
     line-height: 50px;
