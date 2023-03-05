@@ -46,6 +46,14 @@ else
   
   imageObj.src = localStorage.getItem("imageSave");
 }
+if(localStorage.getItem("thoughts") === undefined)
+{
+
+}
+else
+{
+  document.getElementById("thoughtbox").value = localStorage.getItem("thoughts");
+}
 var drawing = false;
 var mousePos = { x: 0, y: 0 };
 var lastPos = mousePos;
@@ -160,6 +168,7 @@ const paragraph = document.querySelector('p');
 button.addEventListener('click', updateButton);
 var click = -0.5;
 function updateButton() {
+  localStorage.setItem("thoughts",document.getElementById("thoughtbox").value);
   if(click == 0){
     paragraph.textContent = "Thanks for sharing!"
   }
