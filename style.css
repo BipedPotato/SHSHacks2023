@@ -3,6 +3,7 @@
     margin: auto;
     width: 800px;
     border: 3px solid #000000;
+    border-radius: 12px;
     align-items: center;
     text-align: center;
     padding: 10px;
@@ -38,6 +39,7 @@
     width: 400px;
     align-items: center;
     border: 3px solid #000000;
+    border-radius: 12px;
     text-align: center;
     background: none no-repeat scroll 0 0 #fff;
     line-height: 50px;
