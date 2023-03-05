@@ -5,19 +5,22 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', setPosition);
 canvas.addEventListener('mouseenter', setPosition);
 
-canvas.addEventListener("touchmove", function (e) {
-  var touch = e.touches[0];
-  var mouseEvent = new MouseEvent("mousemove", {
-    clientX: touch.clientX,
-    clientY: touch.clientY
-  });
-  canvas.dispatchEvent(mouseEvent);
-}, false);
+canvas.addEventListener('touchmove', draw);
+canvas.addEventListener('touchdown', setPosition);
+canvas.addEventListener('touchstart', setPosition);
+
 function setPosition(e) {
   let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  pos.x = e.clientX- canvas.offsetLeft+scrollLeft;
-  pos.y = e.clientY- canvas.offsetTop+scrollTop;
+  pos.x = e.clientX - canvas.offsetLeft + scrollLeft;
+  pos.y = e.clientY - canvas.offsetTop + scrollTop;
+}
+
+function setPositionMobile(e) {
+  let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  pos.x = e.touches[0].clientX - canvas.offsetLeft + scrollLeft;
+  pos.y = e.touches[0].clientY - canvas.offsetTop + scrollTop;
 }
 
 
@@ -27,7 +30,7 @@ function draw(e) {
   if (e.buttons !== 1) return;
 
   ctx.beginPath();
-  
+
   ctx.lineWidth = document.getElementById("drawingSize").value;
   ctx.lineCap = 'round';
   ctx.strokeStyle = document.getElementById("colorpicker").value;
@@ -36,6 +39,6 @@ function draw(e) {
   setPosition(e);
   ctx.lineTo(pos.x, pos.y);
 
-  ctx.stroke(); 
+  ctx.stroke();
 
 }
