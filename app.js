@@ -149,6 +149,11 @@ document.body.addEventListener("touchmove", function (e) {
   }
 }, false);
 
+document.getElementById("saveButton").addEventListener("click",function(e)
+{
+  localStorage.setItem("imageSave", canvas.toDataURL());
+
+});
 const button = document.querySelector('input');
 const paragraph = document.querySelector('p');
 
@@ -163,8 +168,3 @@ function updateButton() {
   }
   click += 0.5;
 }
-document.getElementById("saveButton").addEventListener("click",function(e)
-{
-  localStorage.setItem("imageSave", canvas.toDataURL());
-
-});
