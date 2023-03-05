@@ -74,6 +74,10 @@ function renderCanvas() {
     ctx.lineWidth = document.getElementById("drawingSize").value;
     ctx.lineCap = 'round';
     ctx.strokeStyle = document.getElementById("colorpicker").value;
+    if(document.getElementById("eraser").checked)
+    {
+      ctx.strokeStyle = `rgb(255,255,255)`;
+    }
     
     ctx.moveTo(lastPos.x, lastPos.y);
     ctx.lineTo(mousePos.x, mousePos.y);
