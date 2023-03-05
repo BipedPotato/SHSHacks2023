@@ -28,7 +28,6 @@ var ctx = canvas.getContext('2d');
 var pos = { x: 0, y: 0 };
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', setPosition);
-canvas.addEventListener('mouseenter', setPosition);
 
 
 canvas.addEventListener("touchstart", function (e) {
@@ -39,21 +38,22 @@ canvas.addEventListener("touchstart", function (e) {
   clientY: touch.clientY
   });
   canvas.dispatchEvent(mouseEvent);
-}, false);
+});
 
 canvas.addEventListener("touchend", function (e) {
   var mouseEvent = new MouseEvent("mouseup", {});
   canvas.dispatchEvent(mouseEvent);
-}, false);
+});
 
 canvas.addEventListener("touchmove", function (e) {
+  console.log("TOUCHMOVE");
   var touch = e.touches[0];
   var mouseEvent = new MouseEvent("mousemove", {
   clientX: touch.clientX,
   clientY: touch.clientY
   });
   canvas.dispatchEvent(mouseEvent);
-}, false);
+});
 
 // Get the position of a touch relative to the canvas
 function getTouchPos(canvasDom, touchEvent) {
@@ -75,18 +75,8 @@ function setPosition(e) {
   pos.y = e.clientY - canvas.offsetTop + scrollTop;
 }
 
-function setPositionMobile(e) {
-  //document.getElementById("drawingSize").value = 100;
-  let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  pos.x = e.touches[0].clientX - canvas.offsetLeft + scrollLeft;
-  pos.y = e.touches[0].clientY - canvas.offsetTop + scrollTop;
-}
-
 
 function draw(e) {
-  e.preventDefault();
-  e.stopPropagation();
   if (e.buttons !== 1) return;
 
   ctx.beginPath();
@@ -97,24 +87,6 @@ function draw(e) {
 
   ctx.moveTo(pos.x, pos.y);
   setPosition(e);
-  ctx.lineTo(pos.x, pos.y);
-
-  ctx.stroke();
-
-}
-function drawMobile(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  if (e.buttons !== 1) return;
-
-  ctx.beginPath();
-
-  ctx.lineWidth = document.getElementById("drawingSize").value;
-  ctx.lineCap = 'round';
-  ctx.strokeStyle = document.getElementById("colorpicker").value;
-
-  ctx.moveTo(pos.x, pos.y);
-  setPositionMobile(e);
   ctx.lineTo(pos.x, pos.y);
 
   ctx.stroke();
