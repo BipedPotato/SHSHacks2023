@@ -19,6 +19,7 @@
     margin-right: auto;
     display: block;
     width: 800px;
+    touch-action:none;
     background: none no-repeat scroll 0 0 #ffffff;
 }
 .slider {

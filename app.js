@@ -28,7 +28,6 @@ var ctx = canvas.getContext('2d');
 var pos = { x: 0, y: 0 };
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', setPosition);
-canvas.addEventListener('mouseenter', setPosition);
 
 
 canvas.addEventListener("touchstart", function (e) {
